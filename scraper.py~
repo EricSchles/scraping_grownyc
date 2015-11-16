@@ -1,0 +1,8 @@
+import requests
+import lxml.html
+
+r = requests.get("http://www.grownyc.org/compost/locations")
+html = lxml.html.fromstring(r.text)
+for i in html.xpath("//tbody"):
+    print i
+    break
